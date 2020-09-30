@@ -16,32 +16,18 @@ const {
 function App() {
   const [items, setItems] = useState(factors);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
-  const [activeItem, setActiveItem] = useState(items[activeItemIndex]);
   const itemCardListRef = useRef(null);
 
-  const toPrevItem = () => {
-    const newIndex = activeItemIndex === 0 ? items.length - 1 : activeItemIndex - 1;
-    setActiveItemIndex(newIndex);
-  };
-  const toNextItem = () => {
-    const newIndex = activeItemIndex === items.length - 1 ? 0 : activeItemIndex + 1;
-    setActiveItemIndex(newIndex);
-  };
+  const toPrevItem = () => setActiveItemIndex(activeItemIndex === 0 ? items.length - 1 : activeItemIndex - 1);
+  const toNextItem = () => setActiveItemIndex(activeItemIndex === items.length - 1 ? 0 : activeItemIndex + 1);
   const rateItem = (rating) => {
-    // update single item
-    const itemClone = { ...activeItem };
-    itemClone.rating = rating;
-    setActiveItem(itemClone);
-
-    // update whole array
     const itemsClone = [...items];
-    itemsClone[activeItemIndex] = itemClone;
+    itemsClone[activeItemIndex].rating = rating;
     setItems(itemsClone);
   };
 
   useEffect(() => {
     itemCardListRef.current.children[activeItemIndex].scrollIntoView({ behavior: "smooth" });
-    setActiveItem(items[activeItemIndex]);
   }, [activeItemIndex]);
 
   return (
@@ -49,11 +35,11 @@ function App() {
       <Header user={user} event={event} />
       <div className={styles["main-container"]}>
         <div className={styles["item-card-list-wrapper"]}>
-          <ItemCardList items={items} activeItem={activeItem} setActiveItem={setActiveItem} itemCardListRef={itemCardListRef} />
+          <ItemCardList items={items} activeItemIndex={activeItemIndex} setActiveItemIndex={setActiveItemIndex} itemCardListRef={itemCardListRef} />
         </div>
         <div className={styles["rating-wrapper"]}>
           <RatingStatList items={items} statOptions={statOptions} />
-          <RatingControls activeItem={activeItem} navigatorFunctions={{ prev: toPrevItem, next: toNextItem }} rateItem={rateItem} />
+          <RatingControls activeItem={items[activeItemIndex]} navigatorFunctions={{ prev: toPrevItem, next: toNextItem }} rateItem={rateItem} />
         </div>
       </div>
     </div>

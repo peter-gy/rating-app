@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./rating-controls.module.css";
 
-const RatingControls = ({ activeItem: { name, min, max, step, rating }, navigatorFunctions, rateItem }) => {
-  const onRangeInput = (e) => rateItem(e.target.value);
+const RatingControls = ({ activeItem, navigatorFunctions, rateItem }) => {
+  const { name, min, max, step, rating } = activeItem;
+  const onRangeValueChange = (e) => rateItem(+e.target.value);
   return (
     <div className={styles["rating-controls"]}>
       <div className={styles["rating-info"]}>
@@ -13,7 +14,7 @@ const RatingControls = ({ activeItem: { name, min, max, step, rating }, navigato
         <span>
           Értékelési lépték: <span className={styles["rating-range-step"]}>{step}</span>
         </span>
-        <input type="range" className={styles["rating-range"]} min={min} max={max} step={step} value={rating || min} onInput={onRangeInput} />
+        <input type="range" className={styles["rating-range"]} min={min} max={max} step={step} value={rating || min} onChange={onRangeValueChange} />
         <div className={styles["rating-range-endpoints"]}>
           <span className={styles["rating-range-endpoint-min"]}>{min}</span>
           <span className={styles["rating-range-endpoint-max"]}>{max}</span>
