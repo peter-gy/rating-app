@@ -1,13 +1,48 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Unica+One&display=swap");
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --font-family-title: "Unica One";
+  --font-family-paragraph: "Noto Sans";
+  --color-primary: rgb(78, 78, 78);
+  --color-secondary: rgb(46, 46, 50);
+  --color-highlight: rgb(69, 140, 249);
+  --color-text: rgb(249, 250, 251);
+  --list-item-count-vertical-lg: 7;
+  --list-item-count-vertical-md: 5;
+  --list-item-count-vertical-sm: 3;
+  --list-item-count-horizontal-md: 3;
+  --list-item-count-horizontal-sm: 1;
+  --header-height: 60px;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-paragraph), sans-serif;
+  color: var(--color-text);
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+  background-color: var(--color-primary);
+}
+button {
+  background-color: var(--color-highlight);
+  border: none;
+  color: var(--color-text);
+  padding: 0.7em 1.4em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  border-radius: 10%;
+}
+button:hover {
+  filter: brightness(0.9);
+}
+.flip-y {
+  display: inline-block;
+  transform: scale(-1, 1);
 }

@@ -1,0 +1,12 @@
+.item-card-list {
+  background-color: var(--color-primary);
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+@media screen and (max-width: 768px) {
+  .item-card-list {
+    display: flex;
+    scroll-snap-type: x mandatory;
+  }
+}
