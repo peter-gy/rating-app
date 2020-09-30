@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rating-app/static/css/main.3290d2d4.chunk.css",
+    "main.js": "/rating-app/static/js/main.137571de.chunk.js",
+    "main.js.map": "/rating-app/static/js/main.137571de.chunk.js.map",
+    "runtime-main.js": "/rating-app/static/js/runtime-main.cba2409d.js",
+    "runtime-main.js.map": "/rating-app/static/js/runtime-main.cba2409d.js.map",
+    "static/js/2.8b134225.chunk.js": "/rating-app/static/js/2.8b134225.chunk.js",
+    "static/js/2.8b134225.chunk.js.map": "/rating-app/static/js/2.8b134225.chunk.js.map",
+    "index.html": "/rating-app/index.html",
+    "precache-manifest.6297778ae583f71227a85995768bf536.js": "/rating-app/precache-manifest.6297778ae583f71227a85995768bf536.js",
+    "service-worker.js": "/rating-app/service-worker.js",
+    "static/css/main.3290d2d4.chunk.css.map": "/rating-app/static/css/main.3290d2d4.chunk.css.map",
+    "static/js/2.8b134225.chunk.js.LICENSE.txt": "/rating-app/static/js/2.8b134225.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cba2409d.js",
+    "static/js/2.8b134225.chunk.js",
+    "static/css/main.3290d2d4.chunk.css",
+    "static/js/main.137571de.chunk.js"
+  ]
+}
